@@ -1,0 +1,29 @@
+.album-container {
+  display:flex;
+  flex-wrap:wrap;
+    
+}
+.album {
+  width: 33.33%;
+}
+.thumbnail {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+  .thumbnail .caption {
+     text-align:center
+  }
+    .thumbnail .caption span {
+      font-weight: bold;
+      cursor: pointer
+    }
+.images-container .tool {
+  padding-left:5px;
+  padding-right:5px;
+}
+  .images-container .tool a {
+    border:0px !important;
+  }
+.images-container .album-title {
+text-align:center;
+}
