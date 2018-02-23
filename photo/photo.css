@@ -10,8 +10,11 @@
   padding-left: 5px;
   padding-right: 5px;
 }
+  .thumbnail a {
+    cursor: pointer
+  }
   .thumbnail .caption {
-     text-align:center
+    text-align: center
   }
     .thumbnail .caption span {
       font-weight: bold;

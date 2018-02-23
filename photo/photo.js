@@ -9,33 +9,33 @@ function draw_album() {
         let $albumContainer = $(".album-container");
         $albumContainer.html(htmlstr);
         goto_albums();
-        $albumContainer.find("a.lightbox-link").fancybox();
-
-
-        let $imagesContainer = $(".album-detail");
-        $albumContainer.find("span[data-album]").click(function () {
-            var e = $(this);
-            let albumId = e.attr("data-album");
-
-            for (let i = 0; i < data.length; i++) {
-                if (data[i].id == albumId) {
-
-                    let imagesHtmlStr = img_render_function(data[i].photos, data[i].prefix, data[i].classname);
-                    $imagesContainer.html(imagesHtmlStr);
-                    $(".images-container .album-title h2").html(data[i].title);
-                    goto_images();
-
-                    $imagesContainer.find("a.lightbox-link").fancybox({
-                        "hideOnOverlayClick":false
-                    });
-
-                }
-            }
+        $albumContainer.find("[data-album]").click(function () {
+            showAlbumDetail(this,data);
         });
-
     });
 }
 
+function showAlbumDetail(element,data) {
+    let $imagesContainer = $(".album-detail");
+    var e = $(element);
+    let albumId = e.attr("data-album");
+    
+
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].id == albumId) {
+            let imageClass = (data[i].classname == null || data[i].classname == "") ? "col-2" : data[i].classname;
+            let imagesHtmlStr = img_render_function(data[i].photos, data[i].prefix, imageClass);
+            $imagesContainer.html(imagesHtmlStr);
+            $(".images-container .album-title h2").html(data[i].title);
+            goto_images();
+
+            $imagesContainer.find("a.lightbox-link").fancybox({
+                "hideOnOverlayClick": false
+            });
+
+        }
+    }
+}
 
 function goto_images() {
     $(".album-container").hide();
@@ -67,11 +67,11 @@ function album_item_render_function(album){
     let img_href = album.prefix + album.cover;
     let htmlstr ='<div class="album">';
     htmlstr +='<div class="thumbnail">';
-    htmlstr += '<a  class="lightbox-link" rel="album" href="' + img_href + '" title="' + album.description+'">';
+    htmlstr += '<a  data-album="' + album.id + '" title="' + album.title+'">';
     htmlstr +='<img src="' + img_href + '">';
     htmlstr +='</a>';
-    htmlstr +='<div class="caption">';
-    htmlstr +='<span data-album="'+ album.id +'">' + album.title + '</span>';
+    htmlstr += '<div class="caption">';
+    htmlstr += '<span data-album="' + album.id + '">' + album.title + ' ' + album.photos.length + '</span>';
     htmlstr += '</div>';
     htmlstr += '</div>';
     htmlstr += '</div>';
@@ -93,7 +93,7 @@ function img_item_render_function(image, prefix, classname) {
     htmlstr += '<img src="' + img_href + '">';
     htmlstr += '</a>';
     htmlstr += '<div class="caption">';
-    htmlstr += '<p>' + image.text + '</p>';
+    htmlstr += '<p>' + (image.text == null) ? "" : image.text + '</p>';
     htmlstr += '</div>';
     htmlstr += '</div>';
     htmlstr += '</div>';
