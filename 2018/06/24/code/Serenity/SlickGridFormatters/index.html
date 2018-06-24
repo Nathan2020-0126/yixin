@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Currency Formatter1234567891011121314151617181920212223242526272829303132333435namespace YourProjectNameHere &amp;#123;    @Serenity.Decorators.registerFormatter()    export class CurrencyFormatter implem">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SlickGrid Formatters">
+<meta property="og:url" content="http://blog.hqglj.com/2018/06/24/code/Serenity/SlickGridFormatters/index.html">
+<meta property="og:site_name" content="YiXin">
+<meta property="og:description" content="Currency Formatter1234567891011121314151617181920212223242526272829303132333435namespace YourProjectNameHere &amp;#123;    @Serenity.Decorators.registerFormatter()    export class CurrencyFormatter implem">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-24T08:51:14.518Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SlickGrid Formatters">
+<meta name="twitter:description" content="Currency Formatter1234567891011121314151617181920212223242526272829303132333435namespace YourProjectNameHere &amp;#123;    @Serenity.Decorators.registerFormatter()    export class CurrencyFormatter implem">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.hqglj.com/2018/06/24/code/Serenity/SlickGridFormatters/"/>
+
+
+
+
+
+  <title>SlickGrid Formatters | YiXin</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YiXin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-times">
+          <a href="/images/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            时光
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hqglj.com/2018/06/24/code/Serenity/SlickGridFormatters/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pan Chenhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YiXin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SlickGrid Formatters</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-24T00:00:00+08:00">
+                2018-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Serenity/" itemprop="url" rel="index">
+                    <span itemprop="name">Serenity</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/06/24/code/Serenity/SlickGridFormatters/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/06/24/code/Serenity/SlickGridFormatters/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Currency-Formatter"><a href="#Currency-Formatter" class="headerlink" title="Currency Formatter"></a>Currency Formatter</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> YourProjectNameHere &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Serenity</span>.Decorators.registerFormatter()</span><br><span class="line">    <span class="keyword">export</span> <span class="keyword">class</span> CurrencyFormatter <span class="keyword">implements</span> Slick.Formatter &#123;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Serenity</span>.Decorators.option()</span><br><span class="line">        <span class="keyword">public</span> cultureName: <span class="built_in">string</span>;</span><br><span class="line">        <span class="meta">@Serenity</span>.Decorators.option()</span><br><span class="line">        <span class="keyword">public</span> currencyName: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">        format(ctx: Slick.FormatterContext) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//If the input is not a float - just bounce it back</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">isNaN</span>(<span class="built_in">parseFloat</span>(ctx.value))) &#123;</span><br><span class="line">                <span class="keyword">return</span> ctx.value;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//Use standard currency formatting; This can be modified for other styles (% etc).</span></span><br><span class="line">           <span class="comment">//If no parameters passed then fallback to en-US , USD formatting.</span></span><br><span class="line">            <span class="keyword">this</span>.cultureName = <span class="keyword">this</span>.cultureName ? <span class="keyword">this</span>.cultureName : <span class="string">'en-US'</span>;</span><br><span class="line">            <span class="keyword">this</span>.currencyName = <span class="keyword">this</span>.currencyName ? <span class="keyword">this</span>.currencyName : <span class="string">'USD'</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> formatter = <span class="keyword">new</span> <span class="built_in">Intl</span>.NumberFormat(<span class="keyword">this</span>.cultureName, &#123;</span><br><span class="line">                style: <span class="string">'currency'</span>,</span><br><span class="line">                currency: <span class="keyword">this</span>.currencyName,</span><br><span class="line">                minimumFractionDigits: <span class="number">2</span>,</span><br><span class="line">            &#125;);</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//use the above formatter to return the reformatted value</span></span><br><span class="line">            <span class="keyword">var</span> percentValue = formatter.format(<span class="built_in">Number</span>(ctx.value));</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"&lt;span&gt;"</span> + percentValue + <span class="string">'&lt;/span&gt;'</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后按照如下引用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[CurrencyFormatter(CultureName = &quot;en-US&quot;, CurrencyName = &quot;EUR&quot;)]</span><br><span class="line">public Decimal Q1Budget &#123; get; set; &#125;</span><br><span class="line"></span><br><span class="line">[CurrencyFormatter(CurrencyName = &quot;GBP&quot;)]</span><br><span class="line">public Decimal Q2Budget &#123; get; set; &#125;</span><br><span class="line"></span><br><span class="line">[CurrencyFormatter]</span><br><span class="line">public Decimal Q3Budget &#123; get; set; &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="TextArea-new-lines-Formatter"><a href="#TextArea-new-lines-Formatter" class="headerlink" title="TextArea new lines Formatter"></a>TextArea new lines Formatter</h2><p>It’s just to replicate new lines entered in TextArea Field to the column on Grid and reproduce it to the exported PDF</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> yourProject &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Serenity</span>.Decorators.registerFormatter()</span><br><span class="line">    <span class="keyword">export</span> <span class="keyword">class</span> TextAreaColumnFormatter <span class="keyword">implements</span> Slick.Formatter &#123;</span><br><span class="line"></span><br><span class="line">        format(ctx: Slick.FormatterContext) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> ((ctx.value == <span class="literal">null</span> || <span class="built_in">String</span>(ctx.value).length == <span class="number">0</span>)) &#123;</span><br><span class="line">                <span class="keyword">return</span> ctx.value;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> textArea: <span class="built_in">String</span> = ctx.value;</span><br><span class="line">            textArea.replace(<span class="regexp">/\\r\\n/g</span>, <span class="string">"&lt;br /&gt;"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="string">"&lt;span&gt;"</span> + textArea + <span class="string">'&lt;/span&gt;'</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Then just use it:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[TextAreaColumnFormatter ]</span><br><span class="line">public String SomeTextAreaField &#123; get; set; &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Generic-Use-for-styling"><a href="#Generic-Use-for-styling" class="headerlink" title="Generic Use for styling"></a>Generic Use for styling</h2><p>我们可以自己定义样式。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> yourProject &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Serenity</span>.Decorators.registerFormatter()</span><br><span class="line">    <span class="keyword">export</span> <span class="keyword">class</span> TestFormatter <span class="keyword">implements</span> Slick.Formatter &#123;</span><br><span class="line"></span><br><span class="line">        format(ctx: Slick.FormatterContext) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> ((ctx.value == <span class="literal">null</span> || <span class="built_in">String</span>(ctx.value).length == <span class="number">0</span>)) &#123;</span><br><span class="line">                <span class="keyword">return</span> ctx.value;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> testNumber: <span class="built_in">number</span> = ctx.value;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (testNumber &lt; <span class="number">20</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"&lt;div style='height:100%; background-color: #ffd5c0;'&gt;"</span> + testNumber + <span class="string">'&lt;/div&gt;'</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="string">"&lt;div style='height:100%;  background-color:#00a68f;'&gt;"</span> + testNumber + <span class="string">'&lt;/div&gt;'</span>;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Width(80), AlignRight, TestFormatter]</span><br><span class="line">public Decimal UnitPrice &#123; get; set; &#125;</span><br><span class="line"></span><br><span class="line">[Width(80), AlignRight, TestFormatter]</span><br><span class="line">public Int16 UnitsInStock &#123; get; set; &#125;</span><br><span class="line"></span><br><span class="line">[Width(80), AlignRight, TestFormatter]</span><br><span class="line">public Int16 UnitsOnOrder &#123; get; set; &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Percentage-Formatter"><a href="#Percentage-Formatter" class="headerlink" title="Percentage Formatter"></a>Percentage Formatter</h2><p>百分比格式，如数据库里的值显示未 <code>0.1520</code> ，转化为 <code>15.20%</code>.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> yourNamespace &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Format a Grid Column as a percentage.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Serenity</span>.Decorators.registerFormatter()</span><br><span class="line">    <span class="keyword">export</span> <span class="keyword">class</span> PercentageFormatter <span class="keyword">implements</span> Slick.Formatter &#123;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Serenity</span>.Decorators.option()</span><br><span class="line">        <span class="keyword">public</span> cultureName: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Serenity</span>.Decorators.option()</span><br><span class="line">        <span class="keyword">public</span> decimalPlaces: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">        format(ctx: Slick.FormatterContext) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (!Q.isValue(ctx.value)) &#123;</span><br><span class="line">                ctx.value = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">this</span>.cultureName = Q.coalesce(<span class="keyword">this</span>.cultureName, <span class="string">'en-NZ'</span>);</span><br><span class="line">            <span class="keyword">this</span>.decimalPlaces = Q.coalesce(<span class="keyword">this</span>.decimalPlaces, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> formatter = <span class="keyword">new</span> <span class="built_in">Intl</span>.NumberFormat(<span class="keyword">this</span>.cultureName, &#123;</span><br><span class="line">                style: <span class="string">'percent'</span>,</span><br><span class="line">                minimumFractionDigits: <span class="keyword">this</span>.decimalPlaces,</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//use the above formatter to return the reformatted value</span></span><br><span class="line">            <span class="keyword">var</span> percentValue = formatter.format(<span class="built_in">Number</span>(ctx.value));</span><br><span class="line">            <span class="keyword">return</span> percentValue;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此格式有两个参数，cultureName（默认 en-NZ）和decimalPlaces（默认 2），</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[BasedOnRow(typeof(Entities.ProductExampleRow))]</span><br><span class="line">public class ProductExampleColumns</span><br><span class="line">&#123;</span><br><span class="line">    [PercentageFormatter(DecimalPlaces = 3)]</span><br><span class="line">    public Decimal Discount &#123; get; set; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/05/带孩子的经验/脾胃/" rel="next" title="手上的倒刺">
+                <i class="fa fa-chevron-left"></i> 手上的倒刺
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Pan Chenhao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Currency-Formatter"><span class="nav-number">1.</span> <span class="nav-text">Currency Formatter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TextArea-new-lines-Formatter"><span class="nav-number">2.</span> <span class="nav-text">TextArea new lines Formatter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generic-Use-for-styling"><span class="nav-number">3.</span> <span class="nav-text">Generic Use for styling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Percentage-Formatter"><span class="nav-number">4.</span> <span class="nav-text">Percentage Formatter</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pan Chenhao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cysNNvPvn';
+      var conf = '9baa4be8fd7e8e182ab2fb9244c4c5ea';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
